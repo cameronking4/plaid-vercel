@@ -4,8 +4,7 @@ import plaid from 'plaid';
 const plaidClient = new plaid.Client(
   process.env.PLAID_CLIENT_ID ?? '',
   process.env.PLAID_SECRET ?? '',
-  process.env.PLAID_PUBLIC_KEY ?? '',
-  plaid.environments[process.env.PLAID_ENVIRONMENT ?? 'sandbox']
+  plaid.environments[process.env.PLAID_ENVIRONMENT ?? 'production']
 );
 
 export default async (req: NowRequest, res: NowResponse) => {
